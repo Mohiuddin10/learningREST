@@ -2,6 +2,9 @@ const express = require("express");
 const cors = require('cors');
 const bodyParser = require("body-parser");
 const usersRoute = require("./routes/users.route")
+const productsRoute = require("./routes/products.route")
+const servicesRoute = require("./routes/services.route")
+
 
 const app = express();
 app.use(cors());
@@ -12,6 +15,14 @@ app.use(bodyParser.json())
 // show users 
 
 app.use("/users", usersRoute)
+
+
+// show products
+
+app.use("/products", productsRoute)
+
+// services
+app.use("/services", servicesRoute)
 
 
 // Home route setup 
