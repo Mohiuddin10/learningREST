@@ -4,12 +4,12 @@ const services = [
     {
         id: uuidv4(),
         productName: "Hardware service",
-        Price: 30,
+        price: 30,
     },
     {
         id: uuidv4(),
         productName: "Software service",
-        Price: 5,
+        price: 5,
     }
 ]
 

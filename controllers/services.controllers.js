@@ -15,4 +15,17 @@ const postServices = (req, res) => {
     res.status(200).json({ services })
 }
 
-module.exports = { getAllServices, postServices };
+const updateServices = (req, res) => {
+    const serviceID = req.params.id;
+    console.log(serviceID);
+    const { productName, price } = req.body;
+    services
+        .filter(service => service.id === serviceID)
+        .map(selectedService => {
+            selectedService.productName = productName;
+            selectedService.price = price;
+        })
+        res.status(200).json(services)
+}
+
+module.exports = { getAllServices, postServices, updateServices };
